@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "declaration": true,
+    "module": "CommonJS",
+    "target": "ES5",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitThis": false,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "./typings"
+    ],
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "./typings"
+  ]
+}
