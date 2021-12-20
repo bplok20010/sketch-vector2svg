@@ -14,15 +14,21 @@ export interface Layer {
   points: {
     _class: "shapePath" | "oval";
     cornerRadius: number;
+    /**
+     * 当前坐标作为起始坐标时，该属性为控制点1坐标
+     */
     curveFrom: string;
     curveMode: number;
+    /**
+     * 当前坐标作为终点坐标时，该属性为控制点2坐标
+     */
     curveTo: string;
     /**
-     * 控制点1，开启时取上一个点的curveFrom
+     * 当前坐标作为起始坐标时，是否存在控制点1
      */
     hasCurveFrom: boolean;
     /**
-     * 控制点2，开启时取当前点数的curveTo
+     * 当前坐标作为终点坐标时，是否存在控制点2
      */
     hasCurveTo: boolean;
     point: string;
