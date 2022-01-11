@@ -53,7 +53,7 @@ export function shapePath(layer: Layer) {
         path.push(CMD);
         const cPath: number[] = [];
         // 控制点1
-        if (point.hasCurveFrom) {
+        if (prevPoint.hasCurveFrom) {
           cPath.push(...parsePoints(prevPoint.curveFrom, size));
         } else {
           //控制点1和坐标1相同
