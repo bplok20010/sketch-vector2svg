@@ -108,3 +108,21 @@ export function oval(layer: Layer) {
     points: [...layer.points, layer.points[0]],
   });
 }
+
+export function rectangle(layer: Layer) {
+  const { _class, name, frame, points, isClosed, fixedRadius } = layer;
+  const { width, height } = frame;
+
+  const strokeWidth = 5;
+  const viewBox = {
+    x: -strokeWidth * 2,
+    y: -strokeWidth * 2,
+    width: width + strokeWidth * 4,
+    height: height + strokeWidth * 4,
+  };
+
+  return `<svg width="${viewBox.width}px" height="${viewBox.height}px" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>${name}</title>
+    <rect fill="none" stroke="#979797" x="0" y="0" width="${width}" height="${height}" rx="${fixedRadius}"></rect>
+</svg>`;
+}

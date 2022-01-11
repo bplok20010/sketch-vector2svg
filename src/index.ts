@@ -2,7 +2,7 @@ import * as DecompressZip from "decompress-zip";
 import * as fs from "fs-extra";
 import { SketchPageData, Layer } from "./types";
 import { forEach, isEmpty } from "lodash";
-import { oval, shapePath } from "./shapes";
+import { oval, shapePath, rectangle } from "./shapes";
 
 // sketch解压文件夹
 const outputPath = "output";
@@ -44,6 +44,9 @@ function toSvg(layers: Layer[]) {
     switch (_class) {
       case "oval":
         svg = oval(layer);
+        break;
+      case "rectangle":
+        svg = rectangle(layer);
         break;
       default:
         svg = shapePath(layer);

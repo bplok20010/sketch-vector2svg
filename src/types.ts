@@ -1,5 +1,5 @@
 export interface Layer {
-  _class: "oval" | "shapePath";
+  _class: "oval" | "shapePath" | "rectangle";
   name: string;
   frame: {
     _class: string;
@@ -11,8 +11,9 @@ export interface Layer {
   };
   style: any;
   isClosed: boolean;
+  fixedRadius: number;
   points: {
-    _class: "shapePath" | "oval";
+    _class: "shapePath" | "oval" | "rectangle";
     cornerRadius: number;
     /**
      * 当前坐标作为起始坐标时，该属性为控制点1坐标
